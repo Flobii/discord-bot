@@ -12,11 +12,23 @@ struct Url
     adress::String
 end
 
-mutable struct Card
+# Denke nicht, dass ein mutable struct nötig ist, da die events sowieso mutable ist
+# (weil Vector)
+"""
+    Card
+
+# Arguments
+- `name::String`: The name of the Card
+- `events::Vector{Event}`: A Vector storing all possible Events for the Card
+- `description::String`: A helpful description of the Card
+- `image::Union{File,Url}`: A file or URL for the Card's Image
+- `team::Team`: The Cards Team
+"""
+struct Card
     name::String
-    # events::Vector{Event}
+    events::Vector{Event}
     description::String
-    # image::Union{File,Url}
+    image::Union{File,Url}
     team::Team
 end
 
