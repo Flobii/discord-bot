@@ -13,9 +13,9 @@ end
 
 struct Card
     name::String
-    events::Vector{Event}
+    # events::Vector{Event}
     description::String
-    image::Union{File,Url}
+    # image::Union{File,Url}
 end
 
 """
