@@ -30,3 +30,7 @@ end
 function DemoActionFunction(action::Action, player::Player) 
 end
 ```
+
+## Status-Effects
+
+ - Killed

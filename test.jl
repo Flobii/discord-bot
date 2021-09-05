@@ -1,9 +1,14 @@
-include("data/player.jl")
+include("game.jl")
 
 player = Player("test-player")
 
-Player_AppendStatus!(player, Status("test", -1))
+game = Game_CreateGame(UInt8(1), [ player ])
 
-for i in player.statusEffects
-    print(i)
-end
+Player_AppendStatus!(player, Status("test", 1))
+
+println(player.statusEffects)
+
+Game_NextDaytime!(game)
+Game_NextDaytime!(game)
+
+println(player.statusEffects)
