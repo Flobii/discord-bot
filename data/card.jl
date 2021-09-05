@@ -2,6 +2,7 @@ using TOML
 using Base: open
 
 include("event.jl")
+include("team.jl")
 
 struct File
     adress::String
@@ -11,11 +12,12 @@ struct Url
     adress::String
 end
 
-struct Card
+mutable struct Card
     name::String
     # events::Vector{Event}
     description::String
     # image::Union{File,Url}
+    team::Team
 end
 
 """

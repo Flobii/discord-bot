@@ -1,3 +1,5 @@
+using TOML
+
 include("data/player.jl")
 
 @enum Daytime begin
@@ -9,13 +11,24 @@ mutable struct Game
     daytime::Daytime
     round::UInt16
 
+    allTeams::Vector{Team}
+
     maxPlayers::UInt8
     players::Vector{Player}
 end
 
+function Game_LoadStd!(game::Game, path::String)
+    mainToml = TOML.parsefile(string(path, "/std.toml"))
+    for teamName in mainToml["teams"]
+        push!(game.allTeams, Team(teamName))
+    end
+end
+
 function Game_CreateGame(maxPlayers::UInt8, players::Vector{Player})
     # TODO: Append cards to players
-    return Game(night, 0, maxPlayers, players)
+    game = Game(night, 0, [ ], maxPlayers, players)
+    Game_LoadStd!(game, "std")
+    return game
 end
 
 function Game_NextRound!(game::Game)

@@ -8,7 +8,7 @@ mutable struct Player
     alive::Bool
 end
 
-Player(name) = Player(name, Card("", ""), [ ], true)
+Player(name) = Player(name, Card("", "", Team("")), [ ], true)
 
 function Player_AppendStatus!(player::Player, status::Status)
     push!(player.statusEffects, status)
