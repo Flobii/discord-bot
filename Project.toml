@@ -1,0 +1,4 @@
+[deps]
+Chain = "8be319e6-bccf-4806-a6f7-6fae938471bc"
+Discord = "fcbf000d-02fd-53f1-af91-d952191673d3"
+Images = "916415d5-f1e6-5110-898d-aaa5f9f070e0"

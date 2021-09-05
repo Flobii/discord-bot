@@ -1,11 +1,11 @@
 using TOML
-using Images
+# using Images, TODO: ERROR HERE FLOBII, CUNT
 
 struct Card
     name::String
-    events::[]
+    # events::[]
     description::String
-    image::String
+    # image::String
 end
 
 """
