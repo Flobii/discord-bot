@@ -11,5 +11,5 @@ end
 Player(name) = Player(name, Card("", ""), [ ], true)
 
 function Player_AppendStatus!(player::Player, status::Status)
-    append!(player.statusEffects, status)
+    push!(player.statusEffects, status)
 end
