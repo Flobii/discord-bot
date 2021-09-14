@@ -7,6 +7,7 @@ function OnStart()
 end
 
 function OnDeath()
+end
 
 # Frequently
 function OnDay()
